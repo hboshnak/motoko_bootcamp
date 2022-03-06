@@ -14,21 +14,22 @@ actor {
   //Challenge 2
   public func square(n : Nat) : async Nat {
     return n * n;
-  }
+  };
 
   //Challenge 3
   public func days_to_second(n : Nat) : async Nat {
-    n * 24 * 3600;
-  }
+    return n * 24 * 3600;
+  };
 
   //Challenge 4
   public func increment_counter(n : Nat) : async Nat {
-    return counter := counter + n;
-  }
+    counter := counter + n;
+    return counter;
+  };
 
   public func clear_counter() : async Nat {
     counter := 0;
     return counter;
-  }
+  };
 
 };
