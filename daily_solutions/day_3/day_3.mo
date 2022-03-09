@@ -31,4 +31,28 @@ actor {
         };
         return ("Seven not found");
     };
+
+    // Challenge 4
+    public func nat_opt_to_nat(n : ?Nat, m : Nat): async Text{
+        switch(n){
+            case(null) {
+                (Nat.toText(m))
+            };
+            case(?n) {
+                (Nat.toText(n))
+            };
+        };
+    };
+
+    // Challenge 5
+    public func day_of_the_week(n: Nat) : async ?Text{
+        let arr_days : [Text] = ["Monday", "Tuesday", "Wednesday", "Thirsday", "Friday", "Sataday", "Sunday"];
+        if ( (n > 0) and (n < 8) ){
+            return ?arr_days[(n-1)];
+        }
+        else {
+          return (null);      
+        };
+
+    };
 };
