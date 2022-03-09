@@ -55,4 +55,49 @@ actor {
         };
 
     };
+
+    // Challenge 6
+    public func populate_array(arra : [?Nat]) : async [Nat]{
+        let array : [Nat] = Array.map<?Nat, Nat>(arra, func(n : ?Nat) : Nat{
+            switch(n){
+                case(null) {
+                    return 0;
+                };
+                case(?n) { 
+                    return n;
+                };
+            };
+        });
+    };
+
+    // Challenge 7
+    public func sum_of_array(array: [Nat]) : async Nat {
+        return Array.foldRight<Nat, Nat>(array, 0, func(m, n) {
+            return (m + n);});
+    };
+
+    // Challenge 8
+    public func squared_array(array : [Nat]) : async [Nat]{
+        return Array.map(array, func(m: Nat) : Nat {
+            m ** 2;
+        });
+    };
+
+    // Challenge 9
+    public func increate_by_index(array : [Nat]) : async [Nat]{
+        return Array.mapEntries(array, func(m : Nat, index: Nat) : Nat{
+            m + index;
+        });
+    };
+
+    // challenge 10
+    public func contains<A> (array:[A], a : A, f : (A,A)-> Bool) : Bool{
+        for ( m in array.vals()){
+            if (m == a)
+           { return true;};
+        };          
+        return false;
+    };
+
+
 };
