@@ -14,13 +14,4 @@ module {
         return newAnimal;
     };
 
-    // Challenge 4
-    public func create_animal_then_takes_a_break(speice : Text, energy : Nat): async Animal {
-        let animal = {
-            spe = specie;
-            nrg = energy;
-        };
-        return Animal.animal_sleep(animal);
-    };
-
 };
