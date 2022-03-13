@@ -31,3 +31,5 @@ actor {
   public func checkRegistry (): async [(Nat, Principal)] {
     return Iter.toArray<(Nat, Principal)>(registry.entries());
   };
+
+};
